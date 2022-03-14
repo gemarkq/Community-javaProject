@@ -16,7 +16,7 @@ public class AlphaService {
     }
 
     @PostConstruct
-    public void init() {
+    public void inited() {
         System.out.println("Initializing AlphaService");
     }
 
