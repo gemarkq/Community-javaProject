@@ -81,7 +81,8 @@
         </filter>
     </appender>
 
-    <logger name="com.nowcoder.community" level="debug"/>
+    <logger name="com.jiankun.community" level="debug"/>
+    <logger name="com.jiankun.community.mapper" level="DEBUG"/>
 
     <root level="info">
         <appender-ref ref="FILE_ERROR"/>
