@@ -17,7 +17,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     private LoginTicketInteceptor loginTicketInteceptor;
 
     @Autowired
-    private LoginRequiredInteceptor loginRequiredInteceptor
+    private LoginRequiredInteceptor loginRequiredInteceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
