@@ -5,15 +5,15 @@
 <mapper namespace="com.jiankun.community.dao.CommentMapper">
 
     <sql id="selectFields">
-        id, user_id, entity_id, target_id, content, status, create_time
+        id, user_id, entity_type, entity_id, target_id, content, status, create_time
     </sql>
 
     <sql id="insertFields">
-        user_id, entity_id, target_id, content, status, create_time
+        user_id, entity_type, entity_id, target_id, content, status, create_time
     </sql>
 
-    <insert id="insertComment" parameterType="Comment">
-        insert into comment(<include refid="insertFields"></include>)
+    <insert id="insertComment" parameterType="Comment" keyProperty="id">
+        insert into comment (<include refid="insertFields"></include>)
         values(#{userId}, #{entityType}, #{entityId}, #{targetId}, #{content}, #{status}, #{createTime})
     </insert>
 
@@ -31,8 +31,8 @@
         select count(id)
         from comment
         where status = 0
-        and entity_type = #{entityType}
-        and entity_id = #{entityId}
+          and entity_type = #{entityType}
+          and entity_id = #{entityId}
     </select>
 
 </mapper>

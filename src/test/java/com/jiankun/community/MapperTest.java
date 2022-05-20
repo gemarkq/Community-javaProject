@@ -2,9 +2,11 @@ package com.jiankun.community;
 
 import com.jiankun.community.dao.DiscussPostMapper;
 import com.jiankun.community.dao.LoginTicketMapper;
+import com.jiankun.community.dao.MessageMapper;
 import com.jiankun.community.dao.UserMapper;
 import com.jiankun.community.entity.DiscussPost;
 import com.jiankun.community.entity.LoginTicket;
+import com.jiankun.community.entity.Message;
 import com.jiankun.community.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,9 @@ public class MapperTest {
 
     @Autowired
     LoginTicketMapper loginTicketMapper;
+
+    @Autowired
+    MessageMapper messageMapper;
 
     @Test
     public void testSelectUser() {
@@ -66,6 +71,15 @@ public class MapperTest {
         loginTicketMapper.updateStatus("abc", 1);
         loginTicket =  loginTicketMapper.selectByTicket("abc");
         System.out.println(loginTicket);
+
+    }
+
+    @Test
+    public void testSelectLetters() {
+        List<Message> list = messageMapper.selectConversations(111, 0, 20);
+        for (Message message : list) {
+            System.out.println(message);
+        }
 
     }
 }

@@ -15,7 +15,7 @@
         update discuss_post set comment_count=#{commentCount} where id=#{id}
     </update>
 
-    <select id="selectDiscussPosts" resultType="com.jiankun.community.entity.DiscussPost">
+    <select id="selectDiscussPosts" resultType="DiscussPost">
         select <include refid="selectFields"/>
         from discuss_post
         where status != 2
