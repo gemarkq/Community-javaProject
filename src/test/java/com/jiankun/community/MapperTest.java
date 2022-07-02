@@ -80,6 +80,21 @@ public class MapperTest {
         for (Message message : list) {
             System.out.println(message);
         }
+        int count = messageMapper.selectConversationCount(111);
+        System.out.println(count);
+
+        List<Message> list1 = messageMapper.selectLetters("111_112", 0, 0);
+        for (Message message : list1) {
+            System.out.println(message);
+        }
+
+        count = messageMapper.selectLetterCount("111_112");
+        System.out.println(count);
+
+        count = messageMapper.selectLetterUnreadCount(131, "111_131");
+        System.out.println(count);
+
+
 
     }
 }
