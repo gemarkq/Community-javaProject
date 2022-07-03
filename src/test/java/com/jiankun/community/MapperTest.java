@@ -94,7 +94,11 @@ public class MapperTest {
         count = messageMapper.selectLetterUnreadCount(131, "111_131");
         System.out.println(count);
 
-
-
     }
+
+    @Test
+    public void testSelectUserbyName() {
+        System.out.println(userMapper.selectByName("qjk"));
+    }
+
 }

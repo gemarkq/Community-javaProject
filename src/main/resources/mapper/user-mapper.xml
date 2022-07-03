@@ -20,7 +20,7 @@
     <select id="selectByName" resultType="com.jiankun.community.entity.User">
         select <include refid="selectFields"/>
         from user
-        where username = #{username}
+        where username=#{username}
     </select>
     <select id="selectByEmail" resultType="com.jiankun.community.entity.User">
         select <include refid="selectFields"/>
