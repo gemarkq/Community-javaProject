@@ -26,8 +26,10 @@ public class ExceptionAdvice {
             logger.error(element.toString());
         }
 
-        String xRequestedWidth = request.getHeader("x-requested-width");
-        if("XMLHttpRequest".equals(xRequestedWidth)) {
+        // 判断是否为异步请求
+        String xRequestedWith = request.getHeader("x-requested-with");
+        if("XMLHttpRequest".equals(xRequestedWith)) {
+            // 异步请求
             response.setContentType("application/plain;charset=utf-8");
             PrintWriter writer = response.getWriter();
             writer.write(CommunityUtil.getJSONString(1, "服务器异常"));
